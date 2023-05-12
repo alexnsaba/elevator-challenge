@@ -6,12 +6,13 @@ package com.elevatorchallenge;
  * WaitingList class is used as a blueprint for creating objects of people waiting on each floor
  */
 public class WaitingList {
-    private int floorNumber;
+    private Floor floor;
+
     private int numberOfPeopleWaiting;
 
     //All Args Constructor
-    public WaitingList(int floorNumber, int numberOfPeopleWaiting) {
-        this.floorNumber = floorNumber;
+    public WaitingList(Floor floor, int numberOfPeopleWaiting) {
+        this.floor = floor;
         this.numberOfPeopleWaiting = numberOfPeopleWaiting;
     }
 
@@ -21,8 +22,8 @@ public class WaitingList {
 
     //Getters
 
-    public int getFloorNumber() {
-        return floorNumber;
+    public Floor getFloor() {
+        return floor;
     }
 
     public int getNumberOfPeopleWaiting() {
@@ -30,9 +31,8 @@ public class WaitingList {
     }
 
     //Setters
-
-    public void setFloorNumber(int floorNumber) {
-        this.floorNumber = floorNumber;
+    public void setFloor(Floor floor) {
+        this.floor = floor;
     }
 
     public void setNumberOfPeopleWaiting(int numberOfPeopleWaiting) {

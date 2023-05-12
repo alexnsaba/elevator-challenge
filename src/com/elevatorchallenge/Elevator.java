@@ -11,7 +11,7 @@ import java.util.Set;
 public class Elevator {
     private Status status;
 
-    private int currentFloorNumber;
+    private Floor currentFloor;
 
     private boolean isMoving;
 
@@ -20,9 +20,9 @@ public class Elevator {
     private Set<WaitingList> peopleWaiting;
 
     //All Args Constructor
-    public Elevator(Status status, int currentFloorNumber, boolean isMoving, int peopleInside, Set<WaitingList> peopleWaiting) {
+    public Elevator(Status status, Floor currentFloor, boolean isMoving, int peopleInside, Set<WaitingList> peopleWaiting) {
         this.status = status;
-        this.currentFloorNumber = currentFloorNumber;
+        this.currentFloor = currentFloor;
         this.isMoving = isMoving;
         this.peopleInside = peopleInside;
         this.peopleWaiting = peopleWaiting;
@@ -36,8 +36,8 @@ public class Elevator {
         return status;
     }
 
-    public int getCurrentFloorNumber() {
-        return currentFloorNumber;
+    public Floor getCurrentFloor() {
+        return currentFloor;
     }
 
     public boolean isMoving() {
@@ -58,8 +58,8 @@ public class Elevator {
         this.status = status;
     }
 
-    public void setCurrentFloorNumber(int currentFloorNumber) {
-        this.currentFloorNumber = currentFloorNumber;
+    public void setCurrentFloor(Floor currentFloor) {
+        this.currentFloor = currentFloor;
     }
 
     public void setMoving(boolean moving) {

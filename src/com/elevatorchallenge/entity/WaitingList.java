@@ -1,4 +1,6 @@
-package com.elevatorchallenge;
+package com.elevatorchallenge.entity;
+
+import com.elevatorchallenge.entity.Floor;
 
 /**
  * @Author Niyonsaba Alex

@@ -1,4 +1,4 @@
-package com.elevatorchallenge;
+package com.elevatorchallenge.entity;
 
 import java.util.Set;
 

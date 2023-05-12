@@ -7,9 +7,12 @@ package com.elevatorchallenge;
  */
 public class Elevator {
     private Status status;
+
     private Floor currentFloor;
+
     private boolean isMoving;
-    private Direction direction;
+
     private int peopleInside;
+
     private Set<WaitingList> peopleWaiting;
 }

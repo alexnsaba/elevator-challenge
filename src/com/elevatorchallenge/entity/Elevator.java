@@ -1,6 +1,6 @@
 package com.elevatorchallenge.entity;
 
-import java.util.Set;
+import java.util.List;
 
 /**
  * @Author Niyonsaba Alex
@@ -17,10 +17,13 @@ public class Elevator {
 
     private int peopleInside;
 
-    private Set<WaitingList> peopleWaiting;
+    private List<WaitingList> peopleWaiting;
+
+    //Elavator can only curry a maximum of 7 people
+    private final int WEIGHT_LIMIT = 7;
 
     //All Args Constructor
-    public Elevator(Status status, Floor currentFloor, boolean isMoving, int peopleInside, Set<WaitingList> peopleWaiting) {
+    public Elevator(Status status, Floor currentFloor, boolean isMoving, int peopleInside, List<WaitingList> peopleWaiting) {
         this.status = status;
         this.currentFloor = currentFloor;
         this.isMoving = isMoving;
@@ -48,7 +51,7 @@ public class Elevator {
         return peopleInside;
     }
 
-    public Set<WaitingList> getPeopleWaiting() {
+    public List<WaitingList> getPeopleWaiting() {
         return peopleWaiting;
     }
 
@@ -70,7 +73,19 @@ public class Elevator {
         this.peopleInside = peopleInside;
     }
 
-    public void setPeopleWaiting(Set<WaitingList> peopleWaiting) {
+    public void setPeopleWaiting(List<WaitingList> peopleWaiting) {
         this.peopleWaiting = peopleWaiting;
+    }
+
+    @Override
+    public String toString() {
+        return "Elevator{" +
+                "status=" + status +
+                ", currentFloor=" + currentFloor +
+                ", isMoving=" + isMoving +
+                ", peopleInside=" + peopleInside +
+                ", peopleWaiting=" + peopleWaiting +
+                ", WEIGHT_LIMIT=" + WEIGHT_LIMIT +
+                '}';
     }
 }

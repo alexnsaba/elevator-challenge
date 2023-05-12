@@ -1,5 +1,10 @@
 package com.elevatorchallenge;
 
+import com.elevatorchallenge.dataloader.ElevatorPool;
+import com.elevatorchallenge.entity.Elevator;
+
+import java.util.List;
+
 /**
  * @Author Niyonsaba Alex
  * @Since 12/05/2023
@@ -9,6 +14,10 @@ package com.elevatorchallenge;
 public class ElevatorChallengeApplication {
 
     public static void main(String[] args) {
-        // write your code here
+        // Get default elevator pool
+        List<Elevator> elevators = ElevatorPool.createElevatorPool();
+
+        System.out.println("elevators");
+        System.out.println(elevators.toString());
     }
 }

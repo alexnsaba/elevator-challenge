@@ -41,4 +41,12 @@ public class Floor {
     public int getFloorNumber() {
         return floorNumber;
     }
+
+    @Override
+    public String toString() {
+        return "Floor{" +
+                "floorName='" + floorName + '\'' +
+                ", floorNumber=" + floorNumber +
+                '}';
+    }
 }

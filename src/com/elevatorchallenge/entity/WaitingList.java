@@ -1,7 +1,5 @@
 package com.elevatorchallenge.entity;
 
-import com.elevatorchallenge.entity.Floor;
-
 /**
  * @Author Niyonsaba Alex
  * @Since 12/05/2023
@@ -39,5 +37,13 @@ public class WaitingList {
 
     public void setNumberOfPeopleWaiting(int numberOfPeopleWaiting) {
         this.numberOfPeopleWaiting = numberOfPeopleWaiting;
+    }
+
+    @Override
+    public String toString() {
+        return "WaitingList{" +
+                "floor=" + floor +
+                ", numberOfPeopleWaiting=" + numberOfPeopleWaiting +
+                '}';
     }
 }

@@ -1,9 +1,9 @@
 package com.elevatorchallenge;
 
-import com.elevatorchallenge.dataloader.ElevatorPool;
-import com.elevatorchallenge.entity.Elevator;
+import com.elevatorchallenge.service.ElevatorService;
+import com.elevatorchallenge.service.FloorService;
 
-import java.util.List;
+import java.util.Scanner;
 
 /**
  * @Author Niyonsaba Alex
@@ -12,27 +12,43 @@ import java.util.List;
  */
 
 public class ElevatorChallengeApplication {
-    //Console colors
-    public static final String ANSI_BLACK = "\u001B[30m";
+    //Customise console colors
     public static final String BLACK_BACKGROUND = "\u001B[40m";
     public static final String ANSI_GREEN = "\u001B[32m";
-    public static final String WHITE_BACKGROUND= "\u001B[47m";
     public static final String ANSI_RESET = "\u001B[0m";
 
     //Menu Options
-    public static final String MENU_OPTIONS = " 1. Show Status of all elevators \n 2. Show status of individual elevator \n " +
-            "3. Call elevator to floor \n 4. Set number of people waiting on a floor \n 5. Show all floors ";
+    public static final String MENU_OPTIONS = """
+            1. Show Status of all elevators
+            2. Show status of individual elevator
+            3. Call elevator to floor
+            4. Set number of people waiting on a floor
+            5. Show all floors\s""".indent(1);
 
     public static void main(String[] args) {
-        // Get default elevator pool
-        List<Elevator> elevators = ElevatorPool.createElevatorPool();
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println(ANSI_GREEN + BLACK_BACKGROUND + " WELCOME TO OUR ELEVATORS " + ANSI_RESET);
+        System.out.println(ANSI_GREEN + BLACK_BACKGROUND + " WELCOME TO OUR ELEVATOR SYSTEM " + ANSI_RESET);
 
         System.out.println("Enter Your Choice");
 
         System.out.println(ANSI_GREEN + MENU_OPTIONS + ANSI_RESET);
 
-        System.out.println(elevators.toString());
+        int menuOption = scanner.nextInt();
+
+        if (menuOption == 1) {
+            //Show the status of all elevators
+            ElevatorService.showAllElevatorStatus();
+        } else if (menuOption == 2) {
+            //Show the status of an individual elevator
+            System.out.println("Enter Elevator ID");
+
+            int elevatorId = scanner.nextInt();
+
+            ElevatorService.showElevatorStatusById(elevatorId);
+        } else if (menuOption == 5) {
+            //Show all floors
+            FloorService.showAllFloors();
+        }
     }
 }

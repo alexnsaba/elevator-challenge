@@ -1,7 +1,5 @@
 package com.elevatorchallenge.entity;
 
-import java.util.List;
-
 /**
  * @Author Niyonsaba Alex
  * @Since 12/05/2023
@@ -9,6 +7,8 @@ import java.util.List;
  */
 
 public class Elevator {
+    private int id;
+
     private Status status;
 
     private Floor currentFloor;
@@ -17,13 +17,14 @@ public class Elevator {
 
     private int peopleInside;
 
-    private List<WaitingList> peopleWaiting;
+    private WaitingList peopleWaiting;
 
     //Elavator can only curry a maximum of 7 people
-    private final int WEIGHT_LIMIT = 7;
+    public static final int WEIGHT_LIMIT = 7;
 
     //All Args Constructor
-    public Elevator(Status status, Floor currentFloor, boolean isMoving, int peopleInside, List<WaitingList> peopleWaiting) {
+    public Elevator(int id, Status status, Floor currentFloor, boolean isMoving, int peopleInside, WaitingList peopleWaiting) {
+        this.id = id;
         this.status = status;
         this.currentFloor = currentFloor;
         this.isMoving = isMoving;
@@ -35,6 +36,11 @@ public class Elevator {
     public Elevator(){}
 
     //Getters
+
+    public int getId() {
+        return id;
+    }
+
     public Status getStatus() {
         return status;
     }
@@ -51,11 +57,15 @@ public class Elevator {
         return peopleInside;
     }
 
-    public List<WaitingList> getPeopleWaiting() {
+    public WaitingList getPeopleWaiting() {
         return peopleWaiting;
     }
 
     //Setters
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public void setStatus(Status status) {
         this.status = status;
@@ -73,7 +83,7 @@ public class Elevator {
         this.peopleInside = peopleInside;
     }
 
-    public void setPeopleWaiting(List<WaitingList> peopleWaiting) {
+    public void setPeopleWaiting(WaitingList peopleWaiting) {
         this.peopleWaiting = peopleWaiting;
     }
 

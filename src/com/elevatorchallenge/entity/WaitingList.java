@@ -38,12 +38,4 @@ public class WaitingList {
     public void setNumberOfPeopleWaiting(int numberOfPeopleWaiting) {
         this.numberOfPeopleWaiting = numberOfPeopleWaiting;
     }
-
-    @Override
-    public String toString() {
-        return "WaitingList{" +
-                "floor=" + floor +
-                ", numberOfPeopleWaiting=" + numberOfPeopleWaiting +
-                '}';
-    }
 }

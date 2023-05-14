@@ -13,27 +13,22 @@ public class Elevator {
 
     private Floor currentFloor;
 
-    private boolean isMoving;
-
     private int peopleInside;
-
-    private WaitingList peopleWaiting;
 
     //Elavator can only curry a maximum of 7 people
     public static final int WEIGHT_LIMIT = 7;
 
     //All Args Constructor
-    public Elevator(int id, Status status, Floor currentFloor, boolean isMoving, int peopleInside, WaitingList peopleWaiting) {
+    public Elevator(int id, Status status, Floor currentFloor, int peopleInside) {
         this.id = id;
         this.status = status;
         this.currentFloor = currentFloor;
-        this.isMoving = isMoving;
         this.peopleInside = peopleInside;
-        this.peopleWaiting = peopleWaiting;
     }
 
     //No Args Constructor
-    public Elevator(){}
+    public Elevator() {
+    }
 
     //Getters
 
@@ -49,16 +44,8 @@ public class Elevator {
         return currentFloor;
     }
 
-    public boolean isMoving() {
-        return isMoving;
-    }
-
     public int getPeopleInside() {
         return peopleInside;
-    }
-
-    public WaitingList getPeopleWaiting() {
-        return peopleWaiting;
     }
 
     //Setters
@@ -75,27 +62,7 @@ public class Elevator {
         this.currentFloor = currentFloor;
     }
 
-    public void setMoving(boolean moving) {
-        isMoving = moving;
-    }
-
     public void setPeopleInside(int peopleInside) {
         this.peopleInside = peopleInside;
-    }
-
-    public void setPeopleWaiting(WaitingList peopleWaiting) {
-        this.peopleWaiting = peopleWaiting;
-    }
-
-    @Override
-    public String toString() {
-        return "Elevator{" +
-                "status=" + status +
-                ", currentFloor=" + currentFloor +
-                ", isMoving=" + isMoving +
-                ", peopleInside=" + peopleInside +
-                ", peopleWaiting=" + peopleWaiting +
-                ", WEIGHT_LIMIT=" + WEIGHT_LIMIT +
-                '}';
     }
 }

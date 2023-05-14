@@ -6,33 +6,16 @@ package com.elevatorchallenge.entity;
  * Floor class is used as a blueprint for creating Floor objects
  */
 
-public class Floor {
-    private String floorName;
+public class Floor{
+    private final String floorName;
 
-    private int floorNumber;
+    private final int floorNumber;
 
     //All Args constructor
     public Floor(String floorName, int floorNumber) {
         this.floorName = floorName;
         this.floorNumber = floorNumber;
     }
-
-    //No Args constructor
-
-    public Floor() {
-    }
-
-    //Setters
-
-    public void setFloorName(String floorName) {
-        this.floorName = floorName;
-    }
-
-    public void setFloorNumber(int floorNumber) {
-        this.floorNumber = floorNumber;
-    }
-
-    //Getters
 
     public String getFloorName() {
         return floorName;

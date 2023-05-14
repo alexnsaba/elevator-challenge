@@ -47,6 +47,12 @@ public class ElevatorChallengeApplication {
             int elevatorId = scanner.nextInt();
 
             ElevatorService.showElevatorStatusById(elevatorId);
+        } else if (menuOption == 3) {
+            //Call elevator to floor
+            System.out.println("Enter the Floor Number");
+            int floorNumber = scanner.nextInt();
+
+            ElevatorService.callElevatorToFloor(floorNumber);
         } else if (menuOption == 4) {
             //Set people waiting on a floor
             System.out.println("Enter Floor Number");

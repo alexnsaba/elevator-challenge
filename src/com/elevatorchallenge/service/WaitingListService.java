@@ -15,7 +15,7 @@ public class WaitingListService {
         Floor floor = FloorService.getFloorByNumber(floorNumber);
 
         //Create an instance of waiting list on the provided floor
-        WaitingList waitingList = new WaitingList(floor, numberOfPeopleWaiting);
+        WaitingList waitingList = new WaitingList(numberOfPeopleWaiting, floor);
 
         //Add the waiting list to the waiting list of all Floors
         peopleWaitingOnAllFloors.add(waitingList);

@@ -4,6 +4,7 @@ package com.elevatorchallenge.dataloader;
 import com.elevatorchallenge.entity.Floor;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @Author Niyonsaba Alex

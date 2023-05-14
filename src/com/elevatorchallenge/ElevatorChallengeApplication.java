@@ -2,6 +2,7 @@ package com.elevatorchallenge;
 
 import com.elevatorchallenge.service.ElevatorService;
 import com.elevatorchallenge.service.FloorService;
+import com.elevatorchallenge.service.WaitingListService;
 
 import java.util.Scanner;
 
@@ -46,6 +47,15 @@ public class ElevatorChallengeApplication {
             int elevatorId = scanner.nextInt();
 
             ElevatorService.showElevatorStatusById(elevatorId);
+        } else if (menuOption == 4) {
+            //Set people waiting on a floor
+            System.out.println("Enter Floor Number");
+            int floorNumber = scanner.nextInt();
+
+            System.out.println("Enter the number of people waiting from floor " + floorNumber);
+            int numberOfPeopleWaiting = scanner.nextInt();
+
+            WaitingListService.setPeopleWaitingOnFloor(floorNumber, numberOfPeopleWaiting);
         } else if (menuOption == 5) {
             //Show all floors
             FloorService.showAllFloors();

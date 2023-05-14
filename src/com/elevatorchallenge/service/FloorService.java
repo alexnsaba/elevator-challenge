@@ -4,6 +4,7 @@ import com.elevatorchallenge.dataloader.FloorPool;
 import com.elevatorchallenge.entity.Floor;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FloorService {
     //Get Floor pool
@@ -22,5 +23,10 @@ public class FloorService {
         }
 
         System.out.format("+---------+-----------------+%n");
+    }
+
+    public static Floor getFloorByNumber(int floorNumber) {
+        //Filter through the floor list to return a floor with the provided ID
+        return floors.stream().filter(f -> f.getFloorNumber() == floorNumber).collect(Collectors.toList()).get(0);
     }
 }

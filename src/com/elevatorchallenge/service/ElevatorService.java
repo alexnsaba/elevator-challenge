@@ -2,6 +2,8 @@ package com.elevatorchallenge.service;
 
 import com.elevatorchallenge.dataloader.ElevatorPool;
 import com.elevatorchallenge.entity.Elevator;
+import com.elevatorchallenge.entity.Floor;
+import com.elevatorchallenge.entity.WaitingList;
 
 import java.util.List;
 import java.util.stream.Collectors;

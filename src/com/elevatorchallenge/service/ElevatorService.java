@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 
 public class ElevatorService {
     // Get elevator pool
-    private static final List<Elevator> elevators = ElevatorPool.createElevatorPool();
+    public static final List<Elevator> elevators = ElevatorPool.createElevatorPool();
 
     private static final String elevatorFormatter = "| %-10s | %-15s | %-13s | %-13d | %-13d | %-12d |%n";
 

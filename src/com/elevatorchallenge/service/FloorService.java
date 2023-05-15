@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class FloorService {
     //Get Floor pool
-    private static final List<Floor> floors = FloorPool.createFloorPool();
+    public static final List<Floor> floors = FloorPool.createFloorPool();
 
     private static final String floorFormatter = "| %-7s | %-15s |%n";
 

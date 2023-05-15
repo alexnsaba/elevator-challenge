@@ -28,6 +28,12 @@ public class FloorService {
 
     public static Floor getFloorByNumber(int floorNumber) {
         //Filter through the floor list to return a floor with the provided ID
-        return floors.stream().filter(f -> f.getFloorNumber() == floorNumber).collect(Collectors.toList()).get(0);
+        List<Floor> filteredFloor = floors.stream().filter(f -> f.getFloorNumber() == floorNumber).collect(Collectors.toList());
+
+        if (filteredFloor.isEmpty()) {
+            throw new IndexOutOfBoundsException("Floor # " + floorNumber +
+                    " doesn't exist. Please check menu option 5 for available floors.");
+        }
+        return filteredFloor.get(0);
     }
 }

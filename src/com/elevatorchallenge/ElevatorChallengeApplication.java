@@ -4,6 +4,7 @@ import com.elevatorchallenge.service.ElevatorService;
 import com.elevatorchallenge.service.FloorService;
 import com.elevatorchallenge.service.WaitingListService;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -29,59 +30,63 @@ public class ElevatorChallengeApplication {
             """.indent(4);
 
     public static void main(String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
 
-        Scanner scanner = new Scanner(System.in);
+            int menuOption = 0;
 
-        int menuOption = 0;
+            System.out.println(ANSI_GREEN + BLACK_BACKGROUND + " WELCOME TO OUR ELEVATOR SYSTEM " + ANSI_RESET);
 
-        System.out.println(ANSI_GREEN + BLACK_BACKGROUND + " WELCOME TO OUR ELEVATOR SYSTEM " + ANSI_RESET);
+            while (menuOption != 6) {
+                System.out.println("----------------------------------------------------");
+                System.out.println(" Do you want to Continue? choose an option from the menu below.");
+                System.out.println(" Do you want to Quit? choose option 6.");
+                System.out.println("----------------------------------------------------");
 
-        while (menuOption != 6) {
-            System.out.println("----------------------------------------------------");
-            System.out.println(" Do you want to Continue? choose an option from the menu below.");
-            System.out.println(" Do you want to Quit? choose option 6.");
-            System.out.println("----------------------------------------------------");
+                System.out.println(ANSI_GREEN + MENU_OPTIONS + ANSI_RESET);
+                System.out.println("----------------------------------------------------");
+                System.out.print("Enter Your Menu Option Here: ");
 
-            System.out.println(ANSI_GREEN + MENU_OPTIONS + ANSI_RESET);
-            System.out.println("----------------------------------------------------");
-            System.out.print("Enter Your Menu Option Here: ");
+                menuOption = scanner.nextInt();
 
-            menuOption = scanner.nextInt();
+                if (menuOption == 1) {
+                    //Show the status of all elevators
+                    ElevatorService.showAllElevatorStatus();
+                } else if (menuOption == 2) {
+                    //Show the status of an individual elevator
+                    System.out.print("Enter Elevator ID : ");
 
-            if (menuOption == 1) {
-                //Show the status of all elevators
-                ElevatorService.showAllElevatorStatus();
-            } else if (menuOption == 2) {
-                //Show the status of an individual elevator
-                System.out.print("Enter Elevator ID : ");
+                    int elevatorId = scanner.nextInt();
 
-                int elevatorId = scanner.nextInt();
+                    ElevatorService.showElevatorStatusById(elevatorId);
+                } else if (menuOption == 3) {
+                    //Call elevator to floor
+                    System.out.print("Enter the Floor Number : ");
+                    int floorNumber = scanner.nextInt();
 
-                ElevatorService.showElevatorStatusById(elevatorId);
-            } else if (menuOption == 3) {
-                //Call elevator to floor
-                System.out.print("Enter the Floor Number : ");
-                int floorNumber = scanner.nextInt();
+                    ElevatorService.callElevatorToFloor(floorNumber);
+                } else if (menuOption == 4) {
+                    //Set people waiting on a floor
+                    System.out.print("Enter the Floor Number : ");
+                    int floorNumber = scanner.nextInt();
 
-                ElevatorService.callElevatorToFloor(floorNumber);
-            } else if (menuOption == 4) {
-                //Set people waiting on a floor
-                System.out.print("Enter the Floor Number : ");
-                int floorNumber = scanner.nextInt();
+                    System.out.print("Enter the number of people waiting from floor " + floorNumber + " : ");
+                    int numberOfPeopleWaiting = scanner.nextInt();
 
-                System.out.print("Enter the number of people waiting from floor " + floorNumber + " : ");
-                int numberOfPeopleWaiting = scanner.nextInt();
-
-                WaitingListService.setPeopleWaitingOnFloor(floorNumber, numberOfPeopleWaiting);
-            } else if (menuOption == 5) {
-                //Show all floors
-                FloorService.showAllFloors();
-            } else if (menuOption == 6) {
-                System.out.println("BYE BYE!!! Thank you for using our elevator");
-                System.exit(0);
-            } else {
-                System.out.println("Option " + menuOption + " doesn't exist on our menu");
+                    WaitingListService.setPeopleWaitingOnFloor(floorNumber, numberOfPeopleWaiting);
+                } else if (menuOption == 5) {
+                    //Show all floors
+                    FloorService.showAllFloors();
+                } else if (menuOption == 6) {
+                    System.out.println("BYE BYE!!! Thank you for using our elevator");
+                    System.exit(0);
+                } else {
+                    System.out.println("Option " + menuOption + " doesn't exist on our menu");
+                }
             }
+        } catch (InputMismatchException ex) {
+            System.out.println("Error:  Input Values must be numbers only");
+        } catch (IndexOutOfBoundsException ex) {
+            System.out.println("Error:  " + ex.getLocalizedMessage());
         }
     }
 }

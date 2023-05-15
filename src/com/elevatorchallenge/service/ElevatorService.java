@@ -33,7 +33,14 @@ public class ElevatorService {
 
     public static void showElevatorStatusById(int elevatorId) {
 
-        Elevator elevator = elevators.stream().filter(e -> e.getId() == elevatorId).collect(Collectors.toList()).get(0);
+        List<Elevator> filteredElevator = elevators.stream().filter(e -> e.getId() == elevatorId).collect(Collectors.toList());
+
+        if (filteredElevator.isEmpty()) {
+            throw new IndexOutOfBoundsException("Elevator # " + elevatorId +
+                    " doesn't exist. Please check menu option 1 for available elevators.");
+        }
+
+        Elevator elevator = filteredElevator.get(0);
 
         System.out.println();
         System.out.println("Status of Elevator # " + elevatorId);

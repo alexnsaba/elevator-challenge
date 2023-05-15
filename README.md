@@ -14,7 +14,7 @@ Java (19 and above), and Maven must be installed in order to run this solution.
 ### 1. First clone the project.   
     git clone https://github.com/alexnsaba/elevator-challenge.git
 
-### 2. Navigate to the root project.   
+### 2. Navigate to the root directory of the project.   
     cd elevator-challenge
 
 ### 3. Build and run tests   

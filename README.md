@@ -4,7 +4,7 @@ This solution provides 5 functionalities namely:
  - Showing the statuses of all elevators
  - Showing the status of the individual elevator
  - Calling an elevator to a certain floor
- - Setting the number of people waiting of a floor
+ - Setting the number of people waiting on a floor
  - Showing all floors
 
 ## Prerequisites

@@ -8,7 +8,7 @@ This solution provides 5 functionalities namely:
  - Showing all floors
 
 ## Prerequisites
-Java (17 and above), and Maven must be installed in order to run this solution. 
+Java (19 and above), and Maven must be installed in order to run this solution. 
 
 ## How to run the project using the terminal
 ### 1. First clone the project.   

@@ -10,6 +10,12 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
+/**
+ * @Author Niyonsaba Alex
+ * @Since 12/05/2023
+ * ElevatorService class  contains all the operational logic or methods of the elevator
+ */
+
 public class ElevatorService {
     // Get elevator pool
     private static final List<Elevator> elevators = ElevatorPool.createElevatorPool();
@@ -33,6 +39,7 @@ public class ElevatorService {
 
     public static void showElevatorStatusById(int elevatorId) {
 
+        //Filter elevator with the provided id from a pool of available elevators
         List<Elevator> filteredElevator = elevators.stream().filter(e -> e.getId() == elevatorId).collect(Collectors.toList());
 
         if (filteredElevator.isEmpty()) {

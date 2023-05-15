@@ -13,6 +13,8 @@ import java.util.List;
 public class FloorPool {
 
     public static List<Floor> createFloorPool() {
+        //Create floor objects that will be added to the floor pool
+
         Floor groundFloor = new Floor("Ground Floor", 0);
         Floor firstFloor = new Floor("First Floor", 1);
         Floor secondFloor = new Floor("Second Floor", 2);
@@ -22,6 +24,7 @@ public class FloorPool {
         Floor sixthFloor = new Floor("Sixth Floor", 6);
         Floor seventhFloor = new Floor("Seventh Floor", 7);
 
+        //Add floor objects to the floor pool
         return List.of(groundFloor, firstFloor, secondFloor, thirdFloor, fourthFloor, fifthFloor, sixthFloor, seventhFloor);
     }
 }

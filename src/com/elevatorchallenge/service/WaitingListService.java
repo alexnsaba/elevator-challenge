@@ -6,6 +6,12 @@ import com.elevatorchallenge.entity.WaitingList;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @Author Niyonsaba Alex
+ * @Since 12/05/2023
+ * WaitingListService class  contains all the operational logic or methods of people waiting for elevators
+ */
+
 public class WaitingListService {
     public static List<WaitingList> peopleWaitingOnAllFloors = new ArrayList<>();
 

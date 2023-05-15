@@ -6,6 +6,12 @@ import com.elevatorchallenge.entity.Floor;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * @Author Niyonsaba Alex
+ * @Since 12/05/2023
+ * FloorService class  contains all the operational logic or methods of the floor
+ */
+
 public class FloorService {
     //Get Floor pool
     private static final List<Floor> floors = FloorPool.createFloorPool();

@@ -17,11 +17,12 @@ public class ElevatorPool {
         //Get the floors from the created floor pool
         List<Floor> floors = FloorPool.createFloorPool();
 
-        //Create elevator objects that will added to the elevator pool
+        //Create elevator objects that will be added to the elevator pool
         Elevator elevatorOne = new Elevator(1, Status.IDLE, floors.get(0), 0);
         Elevator elevatorTwo = new Elevator(2, Status.MOVING_UP, floors.get(1), 3);
         Elevator elevatorThree = new Elevator(3, Status.MOVING_DOWN, floors.get(7), 4);
 
+        //Add the elevator objects to the elevator pool
         return List.of(elevatorOne, elevatorTwo, elevatorThree);
     }
 }

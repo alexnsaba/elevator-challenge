@@ -1,6 +1,6 @@
 # Elevator Challenge
 ## Introduction
-This solution allows provides 5 functionalities. namely: 
+This solution provides 5 functionalities. namely: 
  - Showing the statuses of all elevators
  - Showing the status of the individual elevator
  - Calling an elevator to a certain floor

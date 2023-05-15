@@ -3,7 +3,6 @@ package com.elevatorchallenge;
 import com.elevatorchallenge.service.ElevatorService;
 import com.elevatorchallenge.service.FloorService;
 import com.elevatorchallenge.service.WaitingListService;
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

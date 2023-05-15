@@ -10,10 +10,10 @@ import java.util.Scanner;
 /**
  * @Author Niyonsaba Alex
  * @Since 12/05/2023
- * ElevatorChallengeApplication class is used to invoke all the the methods defined in the Elevator service class
+ * App class is used to invoke all the the methods defined in the Elevator service class
  */
 
-public class ElevatorChallengeApplication {
+public class App {
     //Customise console colors
     public static final String BLACK_BACKGROUND = "\u001B[40m";
     public static final String ANSI_GREEN = "\u001B[32m";

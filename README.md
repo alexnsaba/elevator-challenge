@@ -24,7 +24,7 @@ Java (17 and above), and Maven must be installed in order to run this solution.
     mvn exec:java -Dexec.mainClass=com.elevatorchallenge.App
 
 ## How to run the project inside the IDE
-### You can as well open the project in an IDESuch as Intellij, and the click the run button
+### You can as well open the project in an IDE Such as Intellij, and the click the run button
 
  
 

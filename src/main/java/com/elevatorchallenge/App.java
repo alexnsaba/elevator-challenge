@@ -77,7 +77,7 @@ public class App {
                     //Show all floors
                     FloorService.showAllFloors();
                 } else if (menuOption == 6) {
-                    System.out.println("BYE BYE!!! Thank you for using our elevator");
+                    System.out.println("BYE BYE!!! Thank you for using our elevator system");
                     System.exit(0);
                 } else {
                     System.out.println("Option " + menuOption + " doesn't exist on our menu");

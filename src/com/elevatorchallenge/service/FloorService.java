@@ -13,6 +13,7 @@ public class FloorService {
     private static final String floorFormatter = "| %-7s | %-15s |%n";
 
     public static void showAllFloors() {
+        System.out.println();
         System.out.println("List of All floors");
         System.out.format("+---------+-----------------+%n");
         System.out.format("| Floor # | Floor Name      |%n");

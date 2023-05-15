@@ -17,6 +17,7 @@ public class ElevatorService {
     private static final String elevatorFormatter = "| %-10s | %-15s | %-13s | %-13d | %-13d | %-12d |%n";
 
     public static void showAllElevatorStatus() {
+        System.out.println();
         System.out.println("Status of all elevators");
         System.out.format("+------------+-----------------+---------------+---------------+---------------+--------------+%n");
         System.out.format("| Elevator # | Status          | Floor Name    | Floor Number  | People Inside | Weight Limit |%n");
@@ -34,6 +35,7 @@ public class ElevatorService {
 
         Elevator elevator = elevators.stream().filter(e -> e.getId() == elevatorId).collect(Collectors.toList()).get(0);
 
+        System.out.println();
         System.out.println("Status of Elevator # " + elevatorId);
         System.out.format("+------------+-----------------+---------------+---------------+---------------+--------------+%n");
         System.out.format("| Elevator # | Status          | Floor Name    | Floor Number  | People Inside | Weight Limit |%n");
